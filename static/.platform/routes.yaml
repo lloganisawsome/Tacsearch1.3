@@ -1,5 +1,0 @@
-# .platform/routes.yaml
-# Define routes and how requests are handled
-"https://your-app-name.platform.sh":
-  type: upstream
-  upstream: "app:http"
