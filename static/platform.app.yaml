@@ -1,18 +1,11 @@
-name: interstellar
-type: nodejs
-services:
-    database:
-        type: mysql:10.3
-        disk: 512
+# .platform.app.yaml
+name: app
+type: "nodejs"  # Or whichever stack you're using (e.g., "php", "python", etc.)
+
+# Define the web server location and the root directory
 web:
-    locations:
-        "/":
-            root: “static”  
-            passthru: true
-            methods: ["GET", "POST"]
-            allow: all
-    disk: 1024
-    mount:
-        - /data
-build:
-    flavor: "nodejs"  
+  locations:
+    "/":
+      root: "static"  # Make sure 'static' is your correct folder name
+      index: ["index.html"]  # Ensure you are using the correct index file
+      allow: true
