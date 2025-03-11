@@ -1,0 +1,18 @@
+name: interstellar
+type: nodejs
+services:
+    database:
+        type: mysql:10.3
+        disk: 512
+web:
+    locations:
+        "/":
+            root: “static”  
+            passthru: true
+            methods: ["GET", "POST"]
+            allow: all
+    disk: 1024
+    mount:
+        - /data
+build:
+    flavor: "nodejs"  
